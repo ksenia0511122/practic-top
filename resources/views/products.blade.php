@@ -1,15 +1,13 @@
-<!-- resources/views/products.blade.php -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Products</title>
+    <title>Мои товары</title>
 </head>
 <body>
-    <h1>Products List</h1>
-    <ul>
+    <h1>Актуальные товары</h1>
         @foreach ($products as $product)
-            <li>{{ $product['name'] }} - Cost: {{ $product['cost'] }} - Amount: {{ $product['amount'] }}</li>
+                <strong>{{ $product->name }}</strong><br>
+                Цена: {{ $product->price }} ₽<br>
         @endforeach
-    </ul>
 </body>
 </html>
