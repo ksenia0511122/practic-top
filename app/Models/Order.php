@@ -13,5 +13,8 @@ class Order extends Model
            'product_id',
            'quantity',
            'total_price',
+           'user_id',
        ];
+
+    //  определяет массив атрибутов, которые могут быть массово присвоены.
 }

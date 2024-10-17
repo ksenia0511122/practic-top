@@ -12,6 +12,7 @@ class ProductController extends Controller
             // В контроллере
     $products = Product::all(); // Это вернет коллекцию моделей
     return view('products', compact('products'));
+
     }
     // метод для отображения всех продуктов
 

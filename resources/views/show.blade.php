@@ -1,14 +1,34 @@
-<form action="{{ route('order.store') }}" method="POST">
-    @csrf
-    <input type="hidden" name="product_id" value="{{ $product->id }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ товара</title>
+</head>
+<body>
+    @include('components.header')
 
-    <h2>{{ $product->name }}</h2> <!-- Отображение названия товара -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">{{ $product->name }}</h2>
 
-    <label for="quantity">Количество:</label>
-    <input type="number" id="quantity" name="quantity" min="1" required>
+        <form action="{{ route('order.store') }}" method="POST">
+            @csrf
+            <input type="hidden" name="product_id" value="{{ $product->id }}">
 
-    <button type="submit">Заказать</button>
-    @if (session("success"))
-        <div>{{session("success")}}</div>
-    @endif
-</form>
+            <div class="form-group">
+                <label for="quantity">Количество:</label>
+                <input type="number" id="quantity" name="quantity" class="form-control" min="1" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Заказать</button>
+
+            @if (session("success"))
+                <div class="alert alert-success mt-3" role="alert">
+                    {{ session("success") }}
+                </div>
+            @endif
+        </form>
+    </div>
+</body>
+</html>
