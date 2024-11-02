@@ -10,7 +10,7 @@ class ProductController extends Controller
     public function index()
     {
             // В контроллере
-    $products = Product::all(); // Это вернет коллекцию моделей
+    $products = Product::paginate(perPage:1); // Это вернет коллекцию моделей
     return view('products', compact('products'));
 
     }

@@ -12,11 +12,13 @@ class OrderController extends Controller
 {
     $orders = Order::where('user_id', auth()->id())->get();
     return view('index', compact('orders'));
+
 }
 
     public function __construct()
     {
         $this->middleware('auth');
+        // проводит проверку
     }
 
     public function store(Request $request)

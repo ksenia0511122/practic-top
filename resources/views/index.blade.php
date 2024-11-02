@@ -18,6 +18,7 @@
                     <h2 class="card-title">Заказ #{{ $order->id }}</h2>
                     <p class="card-text">Сумма: <strong>{{ $order->total_price }} ₽</strong></p>
                     <p class="card-text">Количество: <strong>{{ $order->quantity }}</strong></p>
+                    <p class="card-text">Статус: <strong>{{ $order->status }}</strong></p>
                 </div>
             </div>
         @endforeach
